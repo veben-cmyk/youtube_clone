@@ -5,7 +5,7 @@ Clone de l'interface de YouTube réalisé en pur **HTML** et **Tailwind CSS**, d
 ![Statut](https://img.shields.io/badge/statut-termin%C3%A9-brightgreen)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
-
+[![Live Demo](https://img.shields.io/badge/demo-en%20ligne-success)](https://veben-cmyk.github.io/youtube_clone/)
 ## 🖼️ Aperçu
 
 
