@@ -8,11 +8,8 @@ Clone de l'interface de YouTube réalisé en pur **HTML** et **Tailwind CSS**, d
 
 ## 🖼️ Aperçu
 
-> Ajoute ici une capture d'écran ou un GIF du rendu (place le fichier dans `images/preview.png` puis remplace le lien ci-dessous).
 
-```
 ![Aperçu du projet](images/preview.png)
-```
 
 ## ✨ Fonctionnalités
 
@@ -92,9 +89,9 @@ Projet réalisé à des fins d'apprentissage et de démonstration (portfolio). I
 
 ## 👤 Auteur
 
-**[Ton Nom]**
+**[ISAAC VEBEN]**
 - Portfolio : [lien]
-- LinkedIn : [lien]
+- LinkedIn : [https://www.linkedin.com/in/isaac-veben-6ab4093a9/]
 - GitHub : [@ton-user](https://github.com/ton-user)
 
 ## 📄 Licence
