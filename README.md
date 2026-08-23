@@ -92,7 +92,7 @@ Projet réalisé à des fins d'apprentissage et de démonstration (portfolio). I
 **[ISAAC VEBEN]**
 - Portfolio : [lien]
 - LinkedIn : [https://www.linkedin.com/in/isaac-veben-6ab4093a9/]
-- GitHub : [@ton-user](https://github.com/veben-cmyk)
+- GitHub : [@veben-cmyk](https://github.com/veben-cmyk)
 
 ## 📄 Licence
 
