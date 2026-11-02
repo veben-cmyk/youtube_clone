@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube</title>
+    <title>YouTube Clone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
-    <nav class="bg-white flex justify-between items-center h-14  px-6 py-2 fixed top-0 left-0 w-full z-50">
 
-        <!-- left side navbar -->
-        
+    <!-- NAVBAR : unique sur la page, elle reste en HTML -->
+    <nav class="bg-white flex justify-between items-center h-14 px-6 py-2 fixed top-0 left-0 w-full z-50">
+
+        <!-- gauche : menu + logo -->
         <div class="flex justify-center items-center gap-6">
             <i class="fa-solid fa-bars text-xl cursor-pointer hover:text-red-600"></i>
-            <img src="images/YouTube-Logo-500x281.png" class="h-14 w-auto" alt="youtube">
+            <img src="images/YouTube-Logo-500x281.png" class="h-14 w-auto" alt="YouTube">
         </div>
 
-        <!-- center navbar -->
-
-        <div class="hidden md:flex flex-1 items-center justify-center gap-4  ">
-            <div class="flex flex-1 w-full max-w-[640px] items-center ">
-                <input type="text" placeholder="search" class="w-full h-10 bg-transparent border border-gray-300 focus:border-blue-500 focus:outline-none rounded-l-full shadow-inner px-6">
+        <!-- centre : recherche + micro -->
+        <div class="hidden md:flex flex-1 items-center justify-center gap-4">
+            <div class="flex flex-1 w-full max-w-[640px] items-center">
+                <input type="text" placeholder="Search" class="w-full h-10 bg-transparent border border-gray-300 focus:border-blue-500 focus:outline-none rounded-l-full shadow-inner px-6">
                 <button class="border border-gray-300 border-l-0 hover:bg-gray-100 shadow-sm rounded-r-full bg-gray-50 h-10 px-6">
                     <i class="fa-solid fa-magnifying-glass text-sm text-gray-600"></i>
                 </button>
@@ -32,491 +31,48 @@
             </div>
         </div>
 
-        <!-- right side navbar -->
-
+        <!-- droite : actions utilisateur -->
         <div class="flex items-center justify-center gap-4 ml-auto">
-
             <button class="flex md:hidden items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full cursor-pointer text-xl text-gray-700">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
-            <button class="hidden md:flex items-center justify-center bg-gray-100 px-4 hover:bg-gray-300 gap-2 p-2 rounded-l-full rounded-r-full cursor-pointer">
+            <button class="hidden md:flex items-center justify-center bg-gray-100 px-4 hover:bg-gray-300 gap-2 p-2 rounded-full cursor-pointer">
                 <i class="fa-solid fa-plus"></i>
-                <p>Créer </p>
+                <p>Create</p>
             </button>
 
             <button class="relative w-10 h-10 bg-white hover:bg-gray-300 p-2 rounded-full cursor-pointer">
-                <i class="fa-solid fa-bell text-xl" ></i>
-                <span class="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-medium text-white px-1">
-                    9+
-                </span>
+                <i class="fa-solid fa-bell text-xl"></i>
+                <span class="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-medium text-white px-1">9+</span>
             </button>
 
             <button class="w-8 h-8 rounded-full ml-1 overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" 
-                    alt="Avatar utilisateur" 
-                        class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="User avatar" class="w-full h-full object-cover">
             </button>
-            
         </div>
-
     </nav>
 
     <div class="flex pt-14">
 
-    <!-- The Sidebar -->
+        <!-- SIDEBAR : remplie par le composant Sidebar -->
+        <aside id="sidebar" class="hidden md:block w-60 h-[calc(100vh-56px)] bg-white p-2 sticky top-14 overflow-y-auto"></aside>
 
-        <aside class="hidden md:block w-60 h-[calc(100vh-56px)] bg-white p-2 sticky top-14 overflow-y-auto hover:overflow-y-auto scrollbar-thin">
+        <main class="flex-1">
 
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <img src="images/accueil.png" class="h-6 w-auto"
-                        alt="youtube-shorts" />
-                    <span class="text-sm">home</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <img src="https://img.icons8.com/material-outlined/24/youtube-shorts.png" class="h-6 w-auto"
-                        alt="youtube-shorts" />
-                    <span class="text-sm">Shorts</span>
-                </div>
-
-                <hr class="border-gray-200 my-3">
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-layer-group text-lg w-6 text-center"></i>
-                    <span class="text-sm">Subscriptions</span>
-                </div>
-            
-
-                <hr class="border-gray-200 my-3">
-
-            <div class="space-y-0.5">
-                <div
-                    class="px-4 py-1 text-sm font-semibold text-gray-900 flex items-center gap-2 cursor-pointer rounded-xl hover:bg-gray-100">
-                    <span>You</span>
-                    <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-regular fa-id-card text-lg w-6 text-center"></i>
-                    <span class="text-sm">Your channel</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-clock-rotate-left text-lg w-6 text-center"></i>
-                    <span class="text-sm">History</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <img src="images/play-list.png" class="h-6 w-auto"
-                        alt="youtube-shorts" />
-                    <span class="text-sm">playlist</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-clapperboard text-lg w-6 text-center"></i>
-                    <span class="text-sm">Your videos</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-regular fa-clock text-lg w-6 text-center"></i>
-                    <span class="text-sm">Watch Later</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-thumbs-up text-lg w-6 text-center"></i>
-                    <span class="text-sm">Liked videos</span>
-                </div>
+            <!-- CATÉGORIES : le conteneur sticky reste ici, les boutons viennent du composant -->
+            <div class="sticky top-14 bg-white z-40 py-2 overflow-x-auto">
+                <div id="categories" class="flex gap-3 w-max px-2"></div>
             </div>
 
-            <hr class="border-gray-200 my-3">
+            <!-- GRILLE DE VIDÉOS : remplie par le composant VideoCard -->
+            <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4"></div>
 
-            <div class="space-y-0.5">
-                <div class="px-4 py-1 text-sm font-semibold text-gray-900">Explore</div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-fire text-lg w-6 text-center"></i>
-                    <span class="text-sm">Trending</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-bag-shopping text-lg w-6 text-center"></i>
-                    <span class="text-sm">Shopping</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-music text-lg w-6 text-center"></i>
-                    <span class="text-sm">Music</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-film text-lg w-6 text-center"></i>
-                    <span class="text-sm">Movies</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-tower-broadcast text-lg w-6 text-center"></i>
-                    <span class="text-sm">Live</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-gamepad text-lg w-6 text-center"></i>
-                    <span class="text-sm">Gaming</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-regular fa-newspaper text-lg w-6 text-center"></i>
-                    <span class="text-sm">News</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-trophy text-lg w-6 text-center"></i>
-                    <span class="text-sm">Sports</span>
-                </div>
-            </div>
-
-            <hr class="border-gray-200 my-3">
-
-            <div class="space-y-0.5">
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-gear text-lg w-6 text-center"></i>
-                    <span class="text-sm">Settings</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-regular fa-flag text-lg w-6 text-center"></i>
-                    <span class="text-sm">Report history</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-regular fa-circle-question text-lg w-6 text-center"></i>
-                    <span class="text-sm">Help</span>
-                </div>
-
-                <div class="flex items-center gap-5 cursor-pointer hover:bg-gray-100 py-2 px-4 rounded-xl">
-                    <i class="fa-solid fa-circle-exclamation text-lg w-6 text-center"></i>
-                    <span class="text-sm">Send feedback</span>
-                </div>
-            </div>
-
-        </aside>
-
-        <div class="flex-1">
-
-            <!-- Categories -->
-
-            <div class="sticky top-14 bg-white z-40 py-2 overflow-x-auto ">
-                <div class="flex gap-3 w-max px-2">
-                    <button class="bg-black text-white px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        All
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        Music
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        Gaming
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        Live
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        Mixes
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        AI
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        Coding
-                    </button>
-
-                    <button class="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded-md text-sm whitespace-nowrap font-semibold">
-                        News
-                    </button>
-                </div>
-            </div>  
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4">
-
-                <!-- card 1 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/TS-xaR5fENE"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/Arcane.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                Arcane: Season 2 | Isha Pulls the Trigger
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">R4M5EY</p>
-                            <p class="text-xs text-gray-500 mt-0.5">4 M vues •16 nov. 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 2 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/vOkQVd6IYvM"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/stage + screen actors — alex d rogers studio.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                
-                                    Débuter sur PHOTOSHOP CC 2024
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">Balo</p>
-                            <p class="text-xs text-gray-500 mt-0.5">1,3 M vues il y a 7 ans</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 3 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/yQBtx0Cfmq8"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=100"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                Jesus wants you to hear this.
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                GODZEAL
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">26 k vues il y a 2 jours</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 4 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/B49yF0THvMA"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/Dream Big, Talk Small_ Jim Rohn Motivation.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                I WASN'T BORN TO BE AVERAGE | Jim Rohn Motivation
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                Jim Rohn Motivation™
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">4 M vues •16 nov. 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 5 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/Exn5OaMz9Jo"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/500 citations motivantes sur Napoleon Hill _ Citations sur la réussite et la richesse _ Pensez et devenez riche.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                RGANISE TA JOURNÉE COMME UN RICHE | Napoleon Hill
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                La Pensée de Napoleon Hill
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">173 k vues il y a 10 mois</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 6 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/AEIal3ymYuw"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/Experience Unmatched Excellence with Yamaha Grand Pianos in Australia.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">                               
-                                quiet moments in a noisy life 🌿 calm piano playlist for soft days & cozy moments
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                Fresh Morning Piano
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">1,6 k vues il y a 1 jour</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 7 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/bMqUG0qhgyM"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/_ (3).jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">                
-                                MOANA Super Extended Trailer (4K ULTRA HD) 2026 | Dwayne Johnson
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                TrailerSpot
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">174 k de vues • il y a 3 jours</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 8 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/jZQ7Vy7fPyA"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/_ (4).jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">
-                                SPIDER-MAN 4 : BRAND NEW DAY Bande Annonce VF (2026)
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                AuCiné
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">305 k vues il y a 2 mois</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 9 -->
-                <div class="cursor-pointer group">
-                    <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/MfrblRKUYiI"
-                            title="Arcane: Season 2 | Isha Pulls the Trigger" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="mt-3 flex gap-3 px-1">
-                        <div class="w-9 h-9 bg-gray-400 rounded-full flex-shrink-0 overflow-hidden">
-                            <img src="images/Michael Jackson.jpeg"
-                                alt="Avatar Chaîne" class="w-full h-full object-cover" />
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-sm text-zinc-900 line-clamp-2 leading-snug">                             
-                                MICHAEL JACKSON Bande Annonce VF (2026) Nouvelle
-                            </h3>
-                            <p class="text-xs text-gray-600 mt-1">
-                                AuCiné
-                            </p>
-                            <p class="text-xs text-gray-500 mt-0.5">345 k vues il y a 4 mois</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        
-        </div>
+        </main>
     </div>
 
+    <!-- type="module" : obligatoire pour import / export -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
