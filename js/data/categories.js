@@ -1,4 +1,5 @@
 // js/data/categories.js
 
 // Liste simple : ici un tableau de textes suffit, pas besoin d'objets
-export const categories = ["All", "Music", "Gaming", "Live", "Mixes", "AI", "Coding", "News"];
+// Catégories adaptées aux vidéos réellement présentes
+export const categories = ["All", "Movies", "Music", "Motivation", "Design", "Faith"];

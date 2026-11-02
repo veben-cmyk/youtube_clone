@@ -12,12 +12,12 @@ export function VideoCard(video) {
 
       <!-- MINIATURE : une simple image au lieu d'une iframe (beaucoup plus léger) -->
       <!-- YouTube fournit la miniature de chaque vidéo à partir de son ID -->
-      <div class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
-        <img
-          src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg"
-          alt="${video.title}"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        >
+    <div data-id="${video.id}" class="relative bg-gray-300 aspect-video rounded-xl overflow-hidden">
+        <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+          <i class="fa-solid fa-play text-white text-3xl"></i>
+        </div>
       </div>
 
       <!-- INFOS SOUS LA MINIATURE -->

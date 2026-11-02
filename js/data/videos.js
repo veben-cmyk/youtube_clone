@@ -10,6 +10,7 @@ export const videos = [
     avatar: "images/Arcane.jpeg",                         // avatar de la chaîne
     views: "4 M vues",
     date: "16 nov. 2024",
+    category: "Movies",
   },
   {
     id: "vOkQVd6IYvM",
@@ -18,6 +19,7 @@ export const videos = [
     avatar: "images/stage + screen actors — alex d rogers studio.jpeg",
     views: "1,3 M vues",
     date: "il y a 7 ans",
+    category: "Design",
   },
   {
     id: "yQBtx0Cfmq8",
@@ -26,6 +28,7 @@ export const videos = [
     avatar: "https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=100",
     views: "26 k vues",
     date: "il y a 2 jours",
+    category: "Faith",
   },
   {
     id: "B49yF0THvMA",
@@ -34,6 +37,7 @@ export const videos = [
     avatar: "images/Dream Big, Talk Small_ Jim Rohn Motivation.jpeg",
     views: "4 M vues",
     date: "16 nov. 2024",
+    category: "Motivation",
   },
   {
     id: "Exn5OaMz9Jo",
@@ -42,6 +46,7 @@ export const videos = [
     avatar: "images/500 citations motivantes sur Napoleon Hill _ Citations sur la réussite et la richesse _ Pensez et devenez riche.jpeg",
     views: "173 k vues",
     date: "il y a 10 mois",
+    category: "Motivation",
   },
   {
     id: "AEIal3ymYuw",
@@ -50,6 +55,7 @@ export const videos = [
     avatar: "images/Experience Unmatched Excellence with Yamaha Grand Pianos in Australia.jpeg",
     views: "1,6 k vues",
     date: "il y a 1 jour",
+    category: "Music",
   },
   {
     id: "bMqUG0qhgyM",
@@ -58,6 +64,7 @@ export const videos = [
     avatar: "images/_ (3).jpeg",
     views: "174 k vues",
     date: "il y a 3 jours",
+    category: "Movies",
   },
   {
     id: "jZQ7Vy7fPyA",
@@ -66,6 +73,7 @@ export const videos = [
     avatar: "images/_ (4).jpeg",
     views: "305 k vues",
     date: "il y a 2 mois",
+    category: "Movies",
   },
   {
     id: "MfrblRKUYiI",
@@ -74,5 +82,6 @@ export const videos = [
     avatar: "images/Michael Jackson.jpeg",
     views: "345 k vues",
     date: "il y a 4 mois",
+    category: "Movies",
   },
 ];
